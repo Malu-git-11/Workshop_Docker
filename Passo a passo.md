@@ -150,67 +150,35 @@ Na linha 1 cole esse código:
 
 version: '3.8'
 
-
-
 services:
+  web:
+    build: .
+    container_name: meu_php
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - db
 
+  db:
+    image: mysql:5.7
+    container_name: meu_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: meubanco
+    ports:
+      - "3306:3306"
 
-
-&nbsp; web:
-
-&nbsp;   build: .
-
-&nbsp;   container\_name: meu\_php
-
-&nbsp;   ports:
-
-&nbsp;     - "8080:80"
-
-&nbsp;   volumes:
-
-&nbsp;     - ./app:/var/www/html
-
-&nbsp;   depends\_on:
-
-&nbsp;     - db
-
-
-
-&nbsp; db:
-
-&nbsp;   image: mysql:5.7
-
-&nbsp;   container\_name: meu\_mysql
-
-&nbsp;   restart: always
-
-&nbsp;   environment:
-
-&nbsp;     MYSQL\_ROOT\_PASSWORD: 1234
-
-&nbsp;     MYSQL\_DATABASE: meubanco
-
-&nbsp;   ports:
-
-&nbsp;     - "3306:3306"
-
-
-
-&nbsp; phpmyadmin:
-
-&nbsp;   image: phpmyadmin/phpmyadmin
-
-&nbsp;   container\_name: meu\_phpmyadmin
-
-&nbsp;   restart: always
-
-&nbsp;   ports:
-
-&nbsp;     - "8081:80"
-
-&nbsp;   environment:
-
-&nbsp;     PMA\_HOST: db
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: meu_phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
 
 
 
