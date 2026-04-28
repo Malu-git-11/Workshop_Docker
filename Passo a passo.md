@@ -126,7 +126,7 @@ Na linha 1 cole esse código:
 
 
 
-&nbsp;	echo "Conectado ao banco!";
+	echo "Conectado ao banco!";
 
 &nbsp;	?>
 
