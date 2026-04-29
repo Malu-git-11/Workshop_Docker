@@ -98,37 +98,28 @@ Na linha 1 cole esse código:
 
 
 
-&nbsp;	<?php
+<?php
 
-&nbsp;	echo "<h1>Docker funcionando </h1>";
+echo "Docker funcionando";
 
+$host = 'db';
 
+$user = 'root';
 
-&nbsp;	$host = 'db';
+$pass = '1234';
 
-&nbsp;	$user = 'root';
+$db = 'meubanco';
 
-&nbsp;	$pass = '1234';
+$conn = new mysqli($host, $user, $pass, $db);
 
-&nbsp;	$db = 'meubanco';
+if ($conn->connect_error) {
 
+    die("Erro: " . $conn->connect_error);
 
+}
 
-&nbsp;	$conn = new mysqli($host, $user, $pass, $db);
-
-
-
-&nbsp;	if ($conn->connect\_error) {
-
-&nbsp;   	die("Erro: " . $conn->connect\_error);
-
-&nbsp;	}
-
-
-
-	echo "Conectado ao banco!";
-
-&nbsp;	?>
+echo "Conectado ao banco!";
+?>
 
 
 
