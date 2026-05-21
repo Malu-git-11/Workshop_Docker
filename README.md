@@ -1,20 +1,3 @@
-<think>
-O usuário quer que eu transforme as anotações acima em um README polido e objetivo para usar no GitHub de um workshop de Docker. Vou criar um documento profissional e didático.
-
-Pontos importantes:
-1. Primeiro, devo entender o que é Docker (taxonomia)
-2. Depois, apresentar os comandos básicos
-3. Por fim, mostrar como criar um Dockerfile
-
-Vou estruturar assim:
-- Introdução breve
-- O que é Docker / Taxonomia
-- Comandos Básicos
-- Criando nosso Dockerfile
-
-Vou manter o tom didático e objetivo, mas polido para GitHub.
-</think># 🚀 Docker Workshop - Guia Completo
-
 > Material de apoio para o workshop de Docker
 
 ---
